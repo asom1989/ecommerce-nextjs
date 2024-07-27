@@ -6,6 +6,7 @@ import {
   faRightToBracket,
   faUserPlus,
 } from "@fortawesome/free-solid-svg-icons";
+import Link from "next/link";
 export default function Header() {
   return (
     <header id="headerElement" className="flex">
@@ -15,16 +16,12 @@ export default function Header() {
           style={{ width: "1.5rem", marginRight: "0.3rem" }}
           icon={faBagShopping}
         />
-
         <span style={{ fontWeight: "bold" }}>AWU</span>
         <p style={{ letterSpacing: "0.5px" }}>Shopping</p>
       </div>
-      <div className="links">
-        <a
-          style={{ position: "relative" }}
-          className="cart"
-          href="./pages/cart.html"
-        >
+
+      <nav className="links">
+        <Link style={{ position: "relative" }} className="cart" href="/cart">
           <FontAwesomeIcon
             className="fa-solid fa-cart-shopping"
             style={{ width: "0.8rem", marginRight: "0.3rem" }}
@@ -32,16 +29,18 @@ export default function Header() {
           />
           $0.00
           <span className="products-number">2</span>
-        </a>
-        <a className="sign-in" href="./pages/signin.html">
+        </Link>
+
+        <Link className="sign-in" href="/signin">
           <FontAwesomeIcon
             className="fa-solid fa-right-to-bracket"
             style={{ width: "0.8rem", marginRight: "0.3rem" }}
             icon={faRightToBracket}
           />
           Sign in
-        </a>
-        <a className="register" href="./pages/register.html">
+        </Link>
+
+        <Link className="register" href="/register">
           <i className="fa-solid fa-user-plus" />
           <FontAwesomeIcon
             className="fa-solid fa-user-plus"
@@ -49,8 +48,8 @@ export default function Header() {
             icon={faUserPlus}
           />
           Register
-        </a>
-      </div>
+        </Link>
+      </nav>
     </header>
   );
 }
