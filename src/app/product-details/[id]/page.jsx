@@ -4,6 +4,7 @@ import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
 import Header from "components/header/Header";
 import Footer from "components/footer/Footer";
 import Image from "next/image";
+import { notFound } from "next/navigation";
 
 async function getData(id) {
   const res = await fetch(`https://fakestoreapi.com/products/${id}`, {
@@ -12,7 +13,8 @@ async function getData(id) {
 
   if (!res.ok) {
     // This will activate the closest `error.js` Error Boundary
-    throw new Error("Failed to fetch data");
+    // throw new Error("Failed to fetch data");
+    notFound();
   }
 
   return res.json();
