@@ -24,7 +24,7 @@ export default async function CardsItem() {
     <section className="products flex">
       {data.map((item) => (
         <article title={item.title} className="card" key={item.id}>
-          <Link href="/pages/product-details.html">
+          <Link href={`/product-details/${item.id}`}>
             {/* <img width={266} src={src} alt={title} srcSet="" /> */}
             <Image src={item.image} width={266} height={280} alt={item.title} />
           </Link>
