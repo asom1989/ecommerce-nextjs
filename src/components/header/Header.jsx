@@ -10,7 +10,7 @@ import Link from "next/link";
 export default function Header() {
   return (
     <header id="headerElement" className="flex">
-      <div className="logo">
+      <Link href={"/"} className="logo">
         <FontAwesomeIcon
           className="fa-solid fa-bag-shopping"
           style={{ width: "1.5rem", marginRight: "0.3rem" }}
@@ -18,7 +18,7 @@ export default function Header() {
         />
         <span style={{ fontWeight: "bold" }}>AWU</span>
         <p style={{ letterSpacing: "0.5px" }}>Shopping</p>
-      </div>
+      </Link>
 
       <nav className="links">
         <Link style={{ position: "relative" }} className="cart" href="/cart">
